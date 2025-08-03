@@ -1,0 +1,141 @@
+:root {
+    --font-serif: 'pingfang SC', 'microsoft yahei', 'helvetica neue', 'Helvetica', 'Arial',
+        sans-serif;
+    --primary-color: #f59d6d;
+    --primary-hover: #fab794;
+    --primary-active: #e68a5a;
+
+    --bg-main: #ffffff;
+    --bg-secondary: #f8f8f8;
+
+    --text-primary: #333333;
+    --text-secondary: #777777;
+    --text-link: #f59d6d;
+    --text-emphasis: #e68a5a;
+
+    --card-bg-primary: #ffffff;
+    --card-bg-secondary: #f9f9f9;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --card-hover-shadow: 0 4px 12px rgba(245, 157, 109, 0.15);
+
+    --btn-primary-bg: #f59d6d;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover: #e68a5a;
+    --btn-primary-active: #d77a4a;
+
+    --btn-secondary-bg: #f3f3f3;
+    --btn-secondary-text: #555555;
+    --btn-secondary-hover: #e5e5e5;
+
+    --btn-danger-bg: #e74c3c;
+    --btn-danger-text: #ffffff;
+    --btn-danger-hover: #d43c2c;
+
+    --btn-success-bg: #3498db;
+    --btn-success-text: #ffffff;
+    --btn-success-hover: #2980b9;
+
+    --btn-warning-bg: #f5b041;
+    --btn-warning-text: #ffffff;
+    --btn-warning-hover: #e59e2d;
+
+    --btn-disabled-bg: #dddddd;
+    --btn-disabled-text: #999999;
+}
+
+.light-mode {
+    /* 明亮模式变量 */
+    --primary-color: #f59d6d;
+    --primary-hover: #e68a5a;
+    --primary-active: #d77a4a;
+
+    --bg-primary: #ffffff;
+    --bg-secondary: #e2e2e2;
+
+    --text-primary: #333333;
+    --text-secondary: #777777;
+    --text-link: #f59d6d;
+    --text-emphasis: #e68a5a;
+
+    --card-bg-primary: #ffffff;
+    --card-bg-secondary: #f9f9f9;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --card-hover-shadow: 0 4px 12px rgba(245, 157, 109, 0.15);
+
+    --btn-primary-bg: #f59d6d;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover: #e68a5a;
+    --btn-primary-active: #d77a4a;
+
+    --btn-secondary-bg: #f3f3f3;
+    --btn-secondary-text: #555555;
+    --btn-secondary-hover: #e5e5e5;
+
+    --btn-danger-bg: #e74c3c;
+    --btn-danger-text: #ffffff;
+    --btn-danger-hover: #d43c2c;
+
+    --btn-success-bg: #3498db;
+    --btn-success-text: #ffffff;
+    --btn-success-hover: #2980b9;
+
+    --btn-warning-bg: #f5b041;
+    --btn-warning-text: #ffffff;
+    --btn-warning-hover: #e59e2d;
+
+    --btn-disabled-bg: #dddddd;
+    --btn-disabled-text: #999999;
+}
+
+.dark-mode {
+    /* 暗色模式变量 */
+    --primary-color: #e0936b;
+    --primary-hover: #eaa785;
+    --primary-active: #e49a73;
+
+    --bg-primary: #2a2a2a;
+    --bg-secondary: #333333;
+
+    --text-primary: #e2e2e2;
+    --text-secondary: #999999;
+    --text-link: #e0936b;
+    --text-emphasis: #eaa785;
+
+    --card-bg-primary: #333333;
+    --card-bg-secondary: #383838;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --card-hover-shadow: 0 4px 12px rgba(224, 147, 107, 0.15);
+
+    --btn-primary-bg: #c7815c;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover: #cc8057;
+    --btn-primary-active: #b87349;
+
+    --btn-secondary-bg: #444444;
+    --btn-secondary-text: #cccccc;
+    --btn-secondary-hover: #505050;
+
+    --btn-danger-bg: #d05a5a;
+    --btn-danger-text: #ffffff;
+    --btn-danger-hover: #c04a4a;
+
+    --btn-success-bg: #4d94ff;
+    --btn-success-text: #ffffff;
+    --btn-success-hover: #3d84ef;
+
+    --btn-warning-bg: #e0a66b;
+    --btn-warning-text: #ffffff;
+    --btn-warning-hover: #d09657;
+
+    --btn-disabled-bg: #494949;
+    --btn-disabled-text: #777777;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-secondary);
+    font-family: var(--font-serif);
+    transition: all 0.3s ease;
+    /* overflow-x: hidden; */
+}
