@@ -32,13 +32,10 @@ const Footer = () => {
 export default Footer
 
 const FooterContainer = styled.div`
-    position: fixed;
-    left: 0;
-    bottom: 0;
     height: 3rem;
     background-color: var(--bg-primary);
     user-select: none;
-    width: 100vw;
+    width: 100%;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
     user-select: none;
     transition: all 0.3s ease;

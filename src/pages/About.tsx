@@ -1,8 +1,10 @@
 import styled from '@emotion/styled'
 import { useEffect, useState } from 'react'
 import BackgroundText from '../components/common/BackgoundText/BackgroundText'
+import useThemeToggle from '../hooks/useThemeToggle'
 
 export const About = () => {
+    const { currentTheme } = useThemeToggle()
     const [anchorId, setAnchorId] = useState<string | null>(null)
 
     useEffect(() => {
@@ -48,6 +50,45 @@ export const About = () => {
                     需要注意的是，若您的Minecraft游戏角色非MIAOMC账号绑定的主要角色，则只能进行解绑操作，无法重置密码。
                 </p>
             )
+        },
+        {
+            id: 'bind',
+            title: '绑定账号',
+            content: (
+                <p>
+                    在初次发起登录请求时，您会进入绑定流程。
+                    <br />
+                    <br />
+                    绑定方式有2种，分别为：
+                    <TextEmphasis>创建新账号来绑定该玩家、用现有账号来绑定该玩家</TextEmphasis>
+                    。绑定流程如下图所示：
+                    <br />
+                    <br />
+                    {currentTheme === 'dark' ? (
+                        <img
+                            src="https://i1.mcobj.com/imgb/u1/20250804_688f92a726072.png"
+                            alt="绑定流程图"
+                            onClick={() => {
+                                window.open(
+                                    'https://i1.mcobj.com/imgb/u1/20250804_688f92a726072.png',
+                                    '_blank'
+                                )
+                            }}
+                        />
+                    ) : (
+                        <img
+                            src="https://i1.mcobj.com/imgb/u1/20250804_688f92a7b22fe.png"
+                            alt="绑定流程图"
+                            onClick={() => {
+                                window.open(
+                                    'https://i1.mcobj.com/imgb/u1/20250804_688f92a7b22fe.png',
+                                    '_blank'
+                                )
+                            }}
+                        />
+                    )}
+                </p>
+            )
         }
     ]
 
@@ -79,8 +120,8 @@ export const About = () => {
 export default About
 
 const AboutPageContainer = styled.div`
-    height: 100%;
-    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
 `
 
 const AboutContainer = styled.div`
@@ -90,10 +131,11 @@ const AboutContainer = styled.div`
 `
 
 const AboutContentContainer = styled.div`
-    min-height: calc(100vh - 12rem);
+    min-height: auto;
     margin-top: 5rem;
     width: 100%;
     flex-direction: column;
+    margin-bottom: 5rem;
 `
 
 const AboutTitle = styled.h1`
@@ -151,6 +193,13 @@ const AboutContent = styled.div`
     color: var(--text-primary);
     margin: 1rem 0;
     line-height: 1.6;
+    p {
+        margin: 1rem 0;
+        & img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
 `
 
 const TextEmphasis = styled.span`

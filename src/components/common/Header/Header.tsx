@@ -1,39 +1,38 @@
 import styled from '@emotion/styled'
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import useThemeToggle from '../../../hooks/useThemeToggle'
 
 const Header = () => {
-    const browserTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light'
-    const bodyElement = document.getElementById('main')!
+    const { currentTheme, themeToggle } = useThemeToggle()
+    const [isScrolled, setIsScrolled] = useState(false)
+    const isMicrosoftEdge = /Edg\/\d+/.test(navigator.userAgent)
 
-    const [currentTheme, setCurrentTheme] = useState(() => {
-        return localStorage.getItem('theme') || browserTheme
-    })
-
+    console.log(isMicrosoftEdge)
     const location = useLocation()
     const currentPath = location.pathname
 
-    // 初始化主题
     useEffect(() => {
-        bodyElement.classList.remove('light-mode', 'dark-mode')
-        bodyElement.classList.add(currentTheme === 'dark' ? 'dark-mode' : 'light-mode')
-    }, [currentTheme, bodyElement])
+        const handleScroll = () => {
+            const scrollTop = window.scrollY
+            setIsScrolled(scrollTop > 50)
+        }
 
-    const themeToggle = () => {
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
-        setCurrentTheme(newTheme)
-        localStorage.setItem('theme', newTheme)
-
-        // 移除所有主题类，然后添加新的
-        bodyElement.classList.remove('light-mode', 'dark-mode')
-        bodyElement.classList.add(newTheme === 'dark' ? 'dark-mode' : 'light-mode')
-    }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
     return (
         <header>
-            <HeaderContainer>
+            <HeaderContainer
+                className={
+                    isScrolled && !isMicrosoftEdge
+                        ? 'scrolled'
+                        : isScrolled && isMicrosoftEdge
+                        ? 'edgeScrolled'
+                        : ''
+                }
+            >
                 <HeaderNav>
                     <HeaderTitle>
                         MIAOMC
@@ -83,12 +82,23 @@ const ActivedLink = {
 }
 
 const HeaderContainer = styled.div`
-    background-color: var(--bg-primary);
+    position: fixed;
     width: 100%;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
     user-select: none;
     transition: all 0.3s ease;
-    backdrop-filter: blur(2px);
+    z-index: 1000;
+
+    &.scrolled {
+        background-color: rgba(var(--bg-primary-rgb), 0.5);
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+
+    &.edgeScrolled {
+        background-color: rgba(var(--bg-primary-rgb), 1);
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+    }
 `
 
 const HeaderNav = styled.nav`

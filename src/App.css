@@ -5,7 +5,7 @@
     --primary-hover: #fab794;
     --primary-active: #e68a5a;
 
-    --bg-main: #ffffff;
+    --bg-primary: #ffffff;
     --bg-secondary: #f8f8f8;
 
     --text-primary: #333333;
@@ -51,6 +51,7 @@
 
     --bg-primary: #ffffff;
     --bg-secondary: #e2e2e2;
+    --bg-primary-rgb: 255, 255, 255;
 
     --text-primary: #333333;
     --text-secondary: #777777;
@@ -58,7 +59,7 @@
     --text-emphasis: #e68a5a;
 
     --card-bg-primary: #ffffff;
-    --card-bg-secondary: #f9f9f9;
+    --card-bg-secondary: #e2e2e2;
     --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     --card-hover-shadow: 0 4px 12px rgba(245, 157, 109, 0.15);
 
@@ -95,6 +96,7 @@
 
     --bg-primary: #2a2a2a;
     --bg-secondary: #333333;
+    --bg-primary-rgb: 42, 42, 42;
 
     --text-primary: #e2e2e2;
     --text-secondary: #999999;
@@ -132,10 +134,10 @@
 }
 
 body {
+    width: 100%;
     margin: 0;
     padding: 0;
     background-color: var(--bg-secondary);
     font-family: var(--font-serif);
     transition: all 0.3s ease;
-    /* overflow-x: hidden; */
 }
