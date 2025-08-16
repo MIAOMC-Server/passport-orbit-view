@@ -25,6 +25,18 @@ export const Verify = () => {
             }
 
             try {
+                /*
+                
+                服务器返回内容示例：
+                {
+                    status: true,
+                    data: {
+                        bind_token: '<a bunch of token>'
+                    },
+                    next: 'Bind'
+                }
+                
+                */
                 const res = await BackendRequest.VerifyUserRequest(data, hash)
                 if (res.status) {
                     setIsSuccess(true)
