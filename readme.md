@@ -1,4 +1,4 @@
-## MIAOMC PASSPORT Service Frontend (Orbit View)
+## MIAOMC PASSPORT Service Frontend (Orbit View - 星轨之窗)
 
 当前处于开发阶段，如果您希望参与共享，可提交 PR 或 Issues。
 
